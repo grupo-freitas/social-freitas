@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Área Administrativa</title>
+    <link rel="stylesheet" href="/css/admin.css">
+    <script src="https://kit.fontawesome.com/e63f6a9c54.js" crossorigin="anonymous"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,400;0,500;0,700;1,100;1,200;1,400;1,700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <main class="container">
+        <div class="dashAdm">
+            <div class="logoAdm">
+                <i class="fas fa-rocket"></i>
+                <p>Grupo<span>Freitas</span></p>
+            </div>
+            <div class="nav">
+                <div class="itens">
+                    <div class="i-navbar" id="i-color">
+                        <div class="back-iten">
+                            <i class="fas fa-home"></i>
+                            <a href="/">Início</a>
+                        </div>
+                    </div>
+                    <div class="i-navbar">
+                        <div class="back-iten">
+                            <i class="fas fa-search"></i>
+                            <a href="/explorar">Explorar</a>
+                        </div>
+                    </div>
+                    <div class="i-navbar">
+                        <div class="back-iten">
+                            <i class="far fa-bookmark"></i>
+                            <a href="/favoritos">Favoritos</a>
+                        </div>
+                    </div>
+                    <div class="i-navbar">
+                        <div class="back-iten">
+                            <i class="far fa-user"></i>
+                            <a href="/perfil">Perfil</a>
+                        </div>
+                    </div>
+                    <div class="i-navbar">
+                        <div class="back-iten">
+                            <i class="far fa-address-book"></i>
+                            <a href="/usuarios">Usuários</a>
+                        </div>
+                    </div>
+                    <div class="i-navbar">
+                        <div class="back-iten">
+                            <i class="fas fa-power-off"></i>
+                            <a href="/sair">Sair</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="areaAdm">
+            <div class="welcomeAdm">
+                <div class="nameAdm">
+                    <div id="welcome">
+                        <p>Olá! Bem-vindo <span><%-user.name%></span></p>
+                    </div>
+                    <div id="fraseAdm">
+                        <p>A administração é a arte de aplicar as leis sem lesar os interesses.</p>
+                    </div>
+                </div>
+                <div class="imgAdm"></div>
+            </div>
+           
+            <div class="tableCamp">
+                <table id="customers">
+                    <tr>
+                        <th>Nome</th>
+                        <th>Login</th>
+                        <th>Setor</th>
+                        <th>Privilégio</th>
+                        <th>Genero</th>
+                        <th>Ações</th>
+                    </tr>
+                    <% users.forEach(u=> { %>
+                        <tr>
+                            <td><%-u.name%></td>
+                            <td><%-u.login%></td>
+                            <td><%-u.sector.name%></td>
+                            <td><%-u.privilege%></td>
+                            <td><%-u.genre%></td>
+                            <td class="buttonsEdit">
+                                <button  class="buttonAdm" id="edit"><i class="fas fa-cog"></i></button>
+                                <button class="buttonAdm" id="reset"><i class="fas fa-sync-alt"></i></button>
+                                <button class="buttonAdm" id="remove"><i class="fas fa-times"></i></button>
+                                
+                            </td>
+                        </tr>
+                    <% }) %>
+                   
+                </table>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
