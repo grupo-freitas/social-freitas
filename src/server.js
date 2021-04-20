@@ -62,6 +62,7 @@ app.use(session({
 
 //Rotas
 app.use('/', require('./routes/appRoutes'), require('./routes/userRoutes'))
+app.use('/admin', require('./routes/adminRoutes'))
 app.use('*', require('./routes/errorRoutes'))
 
 //Porta que o servidor irá ser executado
